@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>echarts数据可视化大屏</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>数据可视化--echarts</h1>
+      <div class="showTime"></div>
+    </header>
+    <div class="mainbox">
+      <div class="column">
+        <div class="panel bar">
+          <h2>柱形图--就业行业</h2>
+          <div class="chart"></div>
+          <div class="panelFooter"></div>
+        </div>
+        <div class="panel bar">
+          <h2>柱形图--就业行业</h2>
+          <div class="chart"></div>
+          <div class="panelFooter"></div>
+        </div>
+        <div class="panel bar">
+          <h2>柱形图--就业行业</h2>
+          <div class="chart"></div>
+          <div class="panelFooter"></div>
+        </div>
+      </div>
+      <div class="column">
+        <!-- no模块制作 -->
+        <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>123456</li>
+              <li>12345</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>前端需求人数</li>
+              <li>市场供应人数</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 地图模块 -->
+        <div class="map">
+          <div class="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+          <div class="chart"></div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="panel bar">
+          <h2>柱形图--就业行业</h2>
+          <div class="chart"></div>
+          <div class="panelFooter"></div>
+        </div>
+        <div class="panel bar">
+          <h2>柱形图--就业行业</h2>
+          <div class="chart"></div>
+          <div class="panelFooter"></div>
+        </div>
+        <div class="panel bar">
+          <h2>柱形图--就业行业</h2>
+          <div class="chart"></div>
+          <div class="panelFooter"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/echarts.js"></script>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/china.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+      // 得到时间
+      (function () {
+        var t = null;
+        t = setTimeout(showTime, 0);
+        function showTime() {
+          clearTimeout(t); //清除定时器
+          let date = new Date();
+          let year = date.getFullYear();
+          let mouth = date.getMonth() + 1;
+          let day = date.getDate();
+          let hour = date.getHours();
+          let minutes = date.getMinutes();
+          let second = date.getSeconds();
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +
+            year +
+            "年" +
+            mouth +
+            "月" +
+            day +
+            "日  " +
+            hour +
+            ":" +
+            minutes +
+            ":" +
+            second;
+          t = setTimeout(showTime, 1000);
+        }
+      })();
+      //  地图
+    </script>
+  </body>
+</html>
